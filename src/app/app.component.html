@@ -1,0 +1,21 @@
+<h1>PaginateDirective</h1>
+<ul>
+	<li *appPaginate="let item of items; perPage: 3; controls: controls">
+		{{ item }}
+	</li>
+</ul>
+<ng-template
+  #controls
+  let-previousPage="previousPage"
+  let-page="page"
+  let-pages="pages"
+  let-nextPage="nextPage"
+>
+  <p>
+    <button (click)="previousPage()">Previous page</button>
+    Page {{ page }}
+    /
+    {{ pages }}
+    <button (click)="nextPage()">Next page</button>
+  </p>
+</ng-template>
